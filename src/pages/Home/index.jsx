@@ -1,10 +1,17 @@
 import React from 'react'
 
+import registration from '../../helpers/img/cadastro.png'
+import LinkButton from '../../components/layout/LinkButton'
+import styles from './Home.module.css'
+
 const Home = () => {
   return (
-    <div>
-      <h1>Está é a minha pagina Home</h1>
-    </div>
+    <section className={styles.home_container}>
+      <h1>Welcome To The <span>Registration List</span> App</h1>
+      <p>Start here to create your registration list</p>
+      <LinkButton to="/users" text="Start"/>
+      <img src={registration} alt="registration" className={styles.registration} />
+    </section>
   )
 }
 
