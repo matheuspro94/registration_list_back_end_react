@@ -1,5 +1,9 @@
 ## REGISTRATION LIST FRONT END
 
+<p align="center">
+  <img width="800" src="src/assets/to_readme/rg_list.jpeg"> 
+</p>
+
 Esse Fron-End foi criado para uma aplicação de cadastro de pessoas, com os inputs de `NOME`, `EMAIL`, `DATA DE NASCIMENTO` e quando enviados para o Back-End é retornado a IDADE da pessoa cadastrada.
 
 ## IMPORTANTE:
@@ -33,7 +37,7 @@ Pronto, agora é possível acessar a aplicação Front-End a partir da rota http
 ## GIF DAS TELAS:
 
 <p align="center">
-  <img width=470 src="src/assets/to_readme/rg_list.gif"> 
+  <img width="800" src="src/assets/to_readme/rg_list.gif"> 
 </p>
 
 ## Contato
