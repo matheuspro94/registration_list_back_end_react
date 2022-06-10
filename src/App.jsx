@@ -8,20 +8,19 @@ import Home from './pages/Home'
 import NewUsers from './pages/NewUsers'
 import Users from './pages/Users'
 import Footer from '../src/components/layout/Footer'
-import Container from './components/layout/Container'
+import User from './pages/User'
 
 function App () {
   return (
-    <div className="App">
+    <div>
       <Navbar />
-        <Container customClass="min-height">
           <Routes>
             <Route path="/" index element={<Home />}></Route>
             <Route path="/newusers" index element={<NewUsers />}></Route>
             <Route path="/users" index element={<Users />}></Route>
+            <Route path="/user/:id" index element={<User />}></Route>
             <Route path="/about" index element={<About />}></Route>
           </Routes>
-        </Container>
       <Footer />
     </div>
   )

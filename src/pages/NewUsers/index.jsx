@@ -25,7 +25,7 @@ const NewUsers = () => {
     <div className={styles.users_constainer}>
       <h1>Create Your Records</h1>
       <p>It is time to create your user</p>
-      <Form handleSubmit={createPost} error={error} />
+      <Form handleSubmit={createPost} error={error} btnText="Create User"/>
     </div>
   )
 }

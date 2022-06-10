@@ -6,6 +6,11 @@ import styles from './UsersCard.module.css'
 import { Link } from 'react-router-dom'
 
 const UsersCard = ({ id, name, email, birthday, age, handleRemove }) => {
+  const removeUser = (e) => {
+    e.preventDefault()
+    handleRemove(id)
+  }
+
   return (
     <div className={styles.user_card}>
       <h4>{name}</h4>
@@ -13,10 +18,10 @@ const UsersCard = ({ id, name, email, birthday, age, handleRemove }) => {
       <p><span>Birthday: </span>{birthday}</p>
       <p><span>Age: </span>{age}</p>
       <div className={styles.user_cart_actions}>
-        <Link to="/">
+        <Link to={`/user/${id}`}>
           <BsPencil /> Edit
         </Link>
-        <button>
+        <button onClick={removeUser}>
           <BsFillTrashFill /> Delete
         </button>
       </div>

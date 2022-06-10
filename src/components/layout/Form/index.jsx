@@ -6,8 +6,8 @@ import Input from '../Input'
 import SubmitButton from '../SubmitButton'
 import styles from './Form.module.css'
 
-const Form = ({ handleSubmit, error }) => {
-  const [user, setUser] = React.useState({})
+const Form = ({ handleSubmit, error, btnText, userData }) => {
+  const [user, setUser] = React.useState(userData || {})
   const navigate = useNavigate()
 
   const submit = async (e) => {
@@ -29,13 +29,15 @@ const Form = ({ handleSubmit, error }) => {
       <Input type="email" placeholder="Enter your email" name="email" text="Email" handleOnChange={handleOnChange} value={user.email}/>
       <Input type="date" placeholder="Enter your birthday" name="birthday" text="Birthday" handleOnChange={handleOnChange} value={user.birthday}/>
       {error && <p className={styles.error}>{error}</p>}
-      <SubmitButton text="Create User"/>
+      <SubmitButton text={btnText} />
     </form>
   )
 }
 
 Form.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  userData: PropTypes.object,
+  btnText: PropTypes.string.isRequired,
   error: PropTypes.string
 }
 
