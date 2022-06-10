@@ -1,25 +1,23 @@
 import React from 'react'
-import axios from 'axios'
 
-import Form from '../../components/layout/Form'
+import Message from '../../components/layout/Message'
+import Container from '../../components/layout/Container'
+import LinkButton from '../../components/layout/LinkButton'
 import styles from './Users.module.css'
 
 const Users = () => {
-  const createPost = (user) => {
-    console.log(user)
-    axios.post('http://localhost:8080/users', user)
-      .then(res => {
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
-      })
-  }
+  const userId = JSON.parse(localStorage.getItem('userId'))
 
   return (
-    <div className={styles.users_constainer}>
-      <h1>Create Your Records</h1>
-      <p>It is time to create your user</p>
-      <Form handleSubmit={createPost}/>
+    <div className={styles.users_container}>
+      <div className={styles.title_container}>
+        <h1>All Users</h1>
+        <LinkButton to="/newusers" text="New User" />
+      </div>
+      {userId && <Message type="success" msg="User created successfully" />}
+      <Container className="start">
+        <p>Projetos...</p>
+      </Container>
     </div>
   )
 }

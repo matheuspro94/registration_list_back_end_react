@@ -9,7 +9,7 @@ const Home = () => {
     <section className={styles.home_container}>
       <h1>Welcome To The <span>Registration List</span> App</h1>
       <p>Start here to create your registration list</p>
-      <LinkButton to="/users" text="Start"/>
+      <LinkButton to="/newusers" text="Start"/>
       <img src={registration} alt="registration" className={styles.registration} />
     </section>
   )

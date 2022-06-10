@@ -1,16 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 
 import Input from '../Input'
 import SubmitButton from '../SubmitButton'
 import styles from './Form.module.css'
 
-const Form = ({ handleSubmit }) => {
+const Form = ({ handleSubmit, error }) => {
   const [user, setUser] = React.useState({})
+  const navigate = useNavigate()
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
-    handleSubmit(user)
+    const res = await handleSubmit(user)
+
+    if (res.request.status === 200) {
+      navigate('/users')
+    }
   }
 
   const handleOnChange = (e) => {
@@ -22,13 +28,15 @@ const Form = ({ handleSubmit }) => {
       <Input type="text" placeholder="Enter your name" name="name" text="Name" handleOnChange={handleOnChange} value={user.name}/>
       <Input type="email" placeholder="Enter your email" name="email" text="Email" handleOnChange={handleOnChange} value={user.email}/>
       <Input type="date" placeholder="Enter your birthday" name="birthday" text="Birthday" handleOnChange={handleOnChange} value={user.birthday}/>
+      {error && <p className={styles.error}>{error}</p>}
       <SubmitButton text="Create User"/>
     </form>
   )
 }
 
 Form.propTypes = {
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
+  error: PropTypes.string
 }
 
 export default Form

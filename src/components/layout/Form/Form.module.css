@@ -2,3 +2,8 @@
   width: 100%;
   margin: 2em 0;
 }
+
+.error {
+  color: red !important;
+  margin-bottom: 1em;
+}
