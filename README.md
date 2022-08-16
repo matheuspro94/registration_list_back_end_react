@@ -37,7 +37,7 @@ Pronto, agora é possível acessar a aplicação Front-End a partir da rota http
 ## GIF DAS TELAS:
 
 <p align="center">
-  <img width="800" src="src/assets/to_readme/rg_list.gif"> 
+  <img width="600" src="src/assets/to_readme/rg_list.gif"> 
 </p>
 
 ## Contato
